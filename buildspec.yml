@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - pip install stacker
+  build:
+    commands:
+      - python --version
+      - echo Build started on `date`
+      - echo Compiling the Python code...
+      - python HelloWorld.py
+  post_build:
+    commands:
+      - printf '[{"name":"degaas-2","imageUri":"718158619460.dkr.ecr.us-east-1.amazonaws.com/degaas-api-new:latest"}]' > imagedefinitions.json
+artifacts:
+    files:
+      - '**/*'
+      
+#example
+#---------------------------------
+#  post_build:
+#    commands:
+#      - printf '[{"name":"amazonlinux","imageUri":""}]' > imagedefinitions.json
+#artifacts:
+#    files: imagedefinitions.json
