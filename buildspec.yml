@@ -12,7 +12,7 @@ phases:
       - python HelloWorld.py
   post_build:
     commands:
-      - printf '[{"name":"degaas-2","imageUri":"718158619460.dkr.ecr.us-east-1.amazonaws.com/degaas-api-new:latest"}]' > imagedefinitions.json
+      - printf '[{"name":"degaas-3","imageUri":"718158619460.dkr.ecr.us-east-1.amazonaws.com/degaas-api-new:latest"}]' > imagedefinitions.json
 artifacts:
     files:
       - '**/*'
