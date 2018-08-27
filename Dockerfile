@@ -1,7 +1,3 @@
-FROM sixeyed/ubuntu-with-utils
-
-RUN echo 'ping localhost &' > /bootstrap.sh
-RUN echo 'sleep infinity' >> /bootstrap.sh
-RUN chmod +x /bootstrap.sh
-
-CMD /bootstrap.sh
+FROM nginx:alpine
+COPY default.conf /etc/nginx/conf.d/default.conf
+COPY index.html /usr/share/nginx/html/index.html
